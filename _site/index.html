@@ -162,7 +162,7 @@
 
 <p>• These widgets help us analyse the data more dynamically.</p>
 
-<h3 id="4️⃣-reactive-programminghow-does--interactive-dashboards-work">4️⃣ Reactive programming(How does  interactive dashboards work?)</h3>
+<h3 id="4️⃣-reactive-programminghow-do-interactive-dashboards-work">4️⃣ Reactive programming(How do interactive dashboards work?)</h3>
 
 <p>• Now, one of the most important features of Panel is  reactive programming, that is if a widgets value changes, then any  linked function or vizualization that is related to the widget will update automatically without needing to manually refresh the page. Let us look at a simple example:</p>
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   
@@ -200,6 +200,26 @@
 <span class="n">template</span><span class="p">.</span><span class="n">servable</span><span class="p">()</span>
 </code></pre></div></div>
 <p>Here we are using a template called FastlistTemplate which is inbuit present in panel which isb mostly used for dashboards with heavy data.</p>
+
+<h3 id="lets-dive-into-real-time-examples-and-explore-some-important-functions-this-library-offers">Lets dive into real time examples and explore some important functions this library offers.</h3>
+
+<h4 id="a-basic-panel-app">A Basic Panel app</h4>
+
+<p>The following code creates a simple web app with a text input and a button.</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">panel</span>  <span class="k">as</span> <span class="n">pn</span>
+<span class="n">pn</span><span class="p">.</span><span class="n">extension</span><span class="p">()</span>
+<span class="k">def</span> <span class="nf">greet</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+   <span class="k">return</span> <span class="sa">f</span><span class="s">"Hello, </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s">!"</span>
+
+<span class="n">text_input</span> <span class="o">=</span> <span class="n">pn</span><span class="p">.</span><span class="n">widgets</span><span class="p">.</span><span class="n">TextInput</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">"Enter your name"</span><span class="p">)</span>
+<span class="n">button</span><span class="o">=</span><span class="n">pn</span><span class="p">.</span><span class="n">widgets</span><span class="p">.</span><span class="n">Button</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">"Greet"</span><span class="p">,</span> <span class="n">button_type</span><span class="o">=</span><span class="s">"primary"</span><span class="p">)</span>
+<span class="n">output</span><span class="o">=</span><span class="n">pn</span><span class="p">.</span><span class="n">pane</span><span class="p">.</span><span class="n">Markdown</span><span class="p">(</span><span class="s">""</span><span class="p">)</span>
+
+<span class="n">button</span><span class="p">.</span><span class="n">on_click</span><span class="p">(</span><span class="k">lambda</span> <span class="n">event</span><span class="p">:</span> <span class="n">output</span><span class="p">.</span><span class="nb">object</span> <span class="o">=</span> <span class="n">greet</span><span class="p">(</span><span class="n">text_input</span><span class="p">.</span><span class="n">value</span><span class="p">))</span>
+<span class="n">app</span> <span class="o">=</span> <span class="n">pn</span><span class="p">.</span><span class="n">Column</span><span class="p">(</span><span class="n">text_input</span><span class="p">,</span> <span class="n">button</span><span class="p">,</span> <span class="n">output</span><span class="p">)</span>
+<span class="n">app</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div></div>
+
 
 
       

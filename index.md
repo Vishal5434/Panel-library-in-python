@@ -138,7 +138,7 @@ dashboard.show()
 
 • These widgets help us analyse the data more dynamically.
 
-### 4️⃣ Reactive programming(How does  interactive dashboards work?)
+### 4️⃣ Reactive programming(How do interactive dashboards work?)
 
 • Now, one of the most important features of Panel is  reactive programming, that is if a widgets value changes, then any  linked function or vizualization that is related to the widget will update automatically without needing to manually refresh the page. Let us look at a simple example:
 ```python
@@ -179,3 +179,26 @@ template=pn.template.FastlistTemplate(
 template.servable()
 ```
 Here we are using a template called FastlistTemplate which is inbuit present in panel which isb mostly used for dashboards with heavy data.
+
+### Lets dive into real time examples and explore some important functions this library offers.
+
+#### A Basic Panel app
+
+The following code creates a simple web app with a text input and a button.
+```python
+import panel  as pn
+pn.extension()
+def greet(name):
+   return f"Hello, {name}!"
+
+text_input = pn.widgets.TextInput(name="Enter your name")
+button=pn.widgets.Button(name="Greet", button_type="primary")
+output=pn.pane.Markdown("")
+
+button.on_click(lambda event: output.object = greet(text_input.value))
+app = pn.Column(text_input, button, output)
+app.show()
+```
+
+
+
