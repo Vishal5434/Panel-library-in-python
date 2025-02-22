@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Welcome to My Blog | Panel-library-in-python</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Welcome to My Blog" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="A blog about coding and open-source projects" />
+<meta property="og:description" content="A blog about coding and open-source projects" />
+<link rel="canonical" href="http://localhost:4000/" />
+<meta property="og:url" content="http://localhost:4000/" />
+<meta property="og:site_name" content="Panel-library-in-python" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Welcome to My Blog" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","description":"A blog about coding and open-source projects","headline":"Welcome to My Blog","name":"Panel-library-in-python","url":"http://localhost:4000/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/assets/css/style.css?v=038e8fd06ac93d8dfc39c4794698a80e8de42a32">
+    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+
+<!-- Setup Google Analytics -->
+
+
+
+<!-- You can set your favicon here -->
+<!-- link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" -->
+
+<!-- end custom head snippets -->
+
+  </head>
+  <body>
+    <div class="container-lg px-3 my-5 markdown-body">
+      
+      <h1><a href="http://localhost:4000/">Panel-library-in-python</a></h1>
+      
+
+      <h1 id="panel-easy-python-dashboards">🚀<a href="_images/logo_horizontal_light_theme.png">Panel</a>-Easy Python Dashboards.</h1>
+
+<p>This blog explains a powerful opensource library called Panel which helps us build interactive web apps and can also be used in data analysis in a very effiecient way.</p>
+
+<h2 id="-overview">📝 Overview.</h2>
+
+<p>Panel is an open-source Python library designed to simplify the development of various tools, web applications, and data analysis workflows—all within the Python ecosystem. Its seamless integration with multiple Python libraries enhances convenience, particularly for data scientists. Panel provides powerful visualization tools, interactive data tables, and collaborative features, enabling efficient and streamlined workflows.</p>
+
+<h2 id="--why-should-we-use-this">❓‍💬  Why should we use this?</h2>
+
+<h3 id="1-easy-to-use">1. Easy to use</h3>
+
+<p>• No need to write heavy HTML or JavaScript code
+    for making web apps, everything can be made 
+    using python only.</p>
+
+<h3 id="2-supports-multiple-data-visualization-libraries">2. Supports Multiple Data visualization Libraries</h3>
+
+<p>• One of the major  advantages of panel is it can
+     do all the things done by libraries like 
+     Matplotlib, Bokeh, Holoviews and more by
+      integrating all these libraries.</p>
+
+<p>• Allows combining different visualization tools</p>
+
+<h3 id="3-interactive-web-applications">3. Interactive Web applications</h3>
+
+<p>• Offers sliders, buttons, text inputs and
+     dropdowns.</p>
+
+<p>• Enables users to interact with data
+     dynamically.</p>
+
+<h3 id="4-supports-live-data-and-streaming-updates">4. Supports Live Data and streaming updates</h3>
+
+<p>• Can handle real time data updates and stream visualizations dynamically.</p>
+
+<h3 id="5--deployment--sharing">5.  Deployment &amp; Sharing</h3>
+
+<p>• Dashboards can be exported to static HTML or hosted as a web app.</p>
+
+<p>• Can be deployed using Flask, FastAPI, or even cloud platforms.</p>
+
+<h2 id="️-installation-and-setup">🖥️ Installation and setup</h2>
+
+<h3 id="using-pip">Using pip.</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>• pip install panel watchfiles
+</code></pre></div></div>
+
+<h3 id="using-conda">Using conda</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>• conda install panel watchfiles  
+</code></pre></div></div>
+
+<p>✅ Tip</p>
+
+<p>We recommend also installing <a href="https://watchfiles.helpmanual.io/">Watchfiles</a>
+ while developing. This will provide a significantly better experience when using Panel’s autoreload features when activating –dev mode. It’s not needed for production.</p>
+
+<p>✅ Tip</p>
+
+<p>To incorporate highlighted code sections into your app, you’ll need to install <a href="https://pygments.org/">pygments</a>, a powerful syntax highlighting library.</p>
+
+<h2 id="-key-features">⭐ Key features</h2>
+<p>We have already seen why should we use this  library, now lets dive into some more cool features this library offers.</p>
+<h3 id="1️⃣-interactive-dasboards-with-minimal-code">1️⃣ Interactive dasboards with minimal code.</h3>
+<p>• Create interactive dashboards and web applications with minimal code.</p>
+
+<p>• It follows an object-oriented approach where Python objects (widgets, plots, layouts) can be directly manipulated.</p>
+
+<p>• This is a standalone tool that worls well with jupyter notebooks.</p>
+
+<h3 id="2️⃣-supports-and-integrates-multiple-visualization-libraries">2️⃣ Supports and integrates multiple Visualization libraries.</h3>
+<p>• Panel works seamlessly with various plotting libraries as follow:</p>
+
+<p>• Matplotlib</p>
+
+<p>• Bokeh</p>
+
+<p>• Ploty</p>
+
+<p>• Altair</p>
+
+<p>• Holoviews</p>
+
+<p>• Datashader (for large datasets)</p>
+
+<p>• Lets now see a simple example of integrating panel with matplotlib to make a sine wave more interactive.</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="kn">import</span> <span class="nn">panel</span> <span class="k">as</span> <span class="n">pn</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+
+<span class="n">pn</span><span class="p">.</span><span class="n">extension</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">plot_sine_wave</span><span class="p">(</span><span class="n">freq</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+
+   <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+   <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">sin</span><span class="p">(</span><span class="n">freq</span> <span class="o">*</span> <span class="n">x</span><span class="p">)</span>
+   <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="p">.</span><span class="n">subplots</span><span class="p">()</span>
+   <span class="n">ax</span><span class="p">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+   <span class="n">ax</span><span class="p">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s">"Sine Wave (Frequency=</span><span class="si">{</span><span class="n">freq</span><span class="si">}</span><span class="s">)"</span><span class="p">)</span>
+   <span class="k">return</span> <span class="n">fig</span>
+<span class="n">slider</span> <span class="o">=</span> <span class="n">pn</span><span class="p">.</span><span class="n">widgets</span><span class="p">.</span><span class="n">IntSlider</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">"Frequency"</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">interactive_plot</span> <span class="o">=</span> <span class="n">pn</span><span class="p">.</span><span class="n">bind</span><span class="p">(</span><span class="n">plot_sine_wave</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="n">slider</span><span class="p">)</span>
+
+<span class="n">dashboard</span> <span class="o">=</span> <span class="n">pn</span><span class="p">.</span><span class="n">Column</span><span class="p">(</span><span class="s">"# Interactive Sine Wave"</span><span class="p">,</span> <span class="n">slider</span><span class="p">,</span> <span class="n">pn</span><span class="p">.</span><span class="n">pane</span><span class="p">.</span><span class="n">Matplotlib</span><span class="p">(</span><span class="n">interactive_plot</span><span class="p">))</span>
+
+<span class="n">dashboard</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
+
+</code></pre></div></div>
+
+<p>• This creates a more interactive sine wave where we can adjust the frequency of the plot too!</p>
+
+<h3 id="3️⃣-interactive-widgets">3️⃣ Interactive widgets</h3>
+
+<p>• Panel provides a variety of widgets including buttons, slides, dropdowns, checkboxes, text inputs and many more that enable user interaction as we have seen in the above sine wave example!</p>
+
+<p>• These widgets help us analyse the data more dynamically.</p>
+
+<h3 id="4️⃣-reactive-programminghow-does--interactive-dashboards-work">4️⃣ Reactive programming(How does  interactive dashboards work?)</h3>
+
+<p>• Now, one of the most important features of Panel is  reactive programming, that is if a widgets value changes, then any  linked function or vizualization that is related to the widget will update automatically without needing to manually refresh the page. Let us look at a simple example:</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   
+   <span class="kn">import</span> <span class="nn">panel</span> <span class="k">as</span> <span class="n">pn</span>
+   <span class="n">pn</span><span class="p">.</span><span class="n">extension</span><span class="p">()</span>
+   <span class="n">slider</span><span class="o">=</span><span class="n">pn</span><span class="p">.</span><span class="n">widgets</span><span class="p">.</span><span class="n">IntSlider</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">'Value'</span><span class="p">,</span><span class="n">start</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">end</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span><span class="n">step</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">value</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+
+   <span class="o">@</span><span class="n">pn</span><span class="p">.</span><span class="n">depends</span><span class="p">(</span><span class="n">slider</span><span class="p">)</span>
+   <span class="k">def</span> <span class="nf">update_text</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+      <span class="k">return</span> <span class="sa">f</span><span class="s">"Slider Value: </span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s">"</span>
+   <span class="n">pn</span><span class="p">.</span><span class="n">Row</span><span class="p">(</span><span class="n">slider</span><span class="p">,</span> <span class="n">update_text</span><span class="p">).</span><span class="n">servable</span><span class="p">()</span>
+
+</code></pre></div></div>
+<p>• Here @pn.depends(slider) automatically updates update_text() whenever the slider value gets changes by the user, no need to call the function manually everytime! The UI updates reactively.</p>
+
+<h3 id="5️⃣-inbuit-html-templates-in-panel">5️⃣ Inbuit HTML Templates in Panel</h3>
+
+<p>Panel Provides ready-made templates buit in HTML that come with great layouts with great responsiveness. Some of them include:</p>
+
+<p>• FastListTemplate- Great for heavy data dashboards</p>
+
+<p>• MaterialTemplate- Uses Googles Material Design</p>
+
+<p>• BootstrapTemplate- Based on Bootstrap</p>
+
+<p>Given below is a simple way to create a structered dashboard with given inbuit templates:</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">panel</span> <span class="k">as</span> <span class="n">pn</span>
+<span class="n">pn</span><span class="p">.</span><span class="n">extension</span><span class="p">()</span>
+<span class="n">template</span><span class="o">=</span><span class="n">pn</span><span class="p">.</span><span class="n">template</span><span class="p">.</span><span class="n">FastlistTemplate</span><span class="p">(</span>
+   <span class="n">title</span><span class="o">=</span><span class="s">" your title "</span>
+   <span class="n">main</span><span class="o">=</span><span class="p">[</span>
+      <span class="s">"main matter you want to write"</span>
+   <span class="p">]</span>
+<span class="p">)</span>
+<span class="n">template</span><span class="p">.</span><span class="n">servable</span><span class="p">()</span>
+</code></pre></div></div>
+<p>Here we are using a template called FastlistTemplate which is inbuit present in panel which isb mostly used for dashboards with heavy data.</p>
+
+
+      
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js" integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg=" crossorigin="anonymous"></script>
+    <script>anchors.add();</script>
+  </body>
+</html>
