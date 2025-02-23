@@ -179,9 +179,35 @@ template.servable()
 ```
 Here we are using a template called FastlistTemplate which is inbuit present in panel which isb mostly used for dashboards with heavy data.
 
+### 🚀 Lets see some important functions this library offers
+`pn.Row()` – Creates a horizontal layout for components.  
+`pn.Column()` – Creates a vertical layout for components.  
+`pn.GridBox()` – Arranges components in a grid layout.  
+`pn.WidgetBox()` – Groups widgets with optional styling.  
+`pn.pane.Markdown()` – Renders Markdown text.  
+`pn.pane.HTML()` – Displays raw HTML content.  
+`pn.pane.Image()` – Displays images from file or URL.  
+`pn.pane.Video()` – Embeds and plays videos.  
+`pn.pane.Audio()` – Embeds and plays audio files.  
+`pn.panel()` – Converts an object into a Panel layout.  
+`pn.widgets.Button()` – Adds a clickable button.  
+`pn.widgets.TextInput()` – Creates a text input field.  
+`pn.widgets.IntSlider()` – Adds an integer slider.  
+`pn.widgets.FloatSlider()` – Adds a floating-point slider.  
+`pn.widgets.Checkbox()` – Adds a checkbox for boolean input.  
+`pn.widgets.RadioButtonGroup()` – Creates radio button options.  
+`pn.widgets.Select()` – Adds a dropdown selection menu.  
+`pn.widgets.FileInput()` – Enables file uploads.  
+`pn.bind()` – Binds a function to widgets dynamically.  
+`pn.extension()` – Loads necessary Panel extensions for rendering.  
+`pn.state` – Provides access to session state and configuration.  
+`pn.serve()` – Serves the Panel app on a local server.  
+`pn.interact()` – Creates interactive widgets for functions.  
+`pn.Tabs()` – Organizes content into tabbed views.  
+`pn.Spacer()` – Adds empty space between components.  
 
 
-### 🚀 Lets dive into real time examples and explore some important functions this library offers.
+### 🚀 Lets now dive into real time examples and explore some important functions this library offers.
 
 ### 1. A Basic Panel app
 

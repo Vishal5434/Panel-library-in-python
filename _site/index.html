@@ -22,7 +22,7 @@
 {"@context":"https://schema.org","@type":"WebSite","description":"A blog about coding and open-source projects","headline":"Panel-Easy Python Dashboards","name":"Panel-library-in-python","url":"http://localhost:4000/"}</script>
 <!-- End Jekyll SEO tag -->
 
-    <link rel="stylesheet" href="/assets/css/style.css?v=288895608fe0049b7e35712ef4051be52985fc7f">
+    <link rel="stylesheet" href="/assets/css/style.css?v=8014f863cd46d9cb3fb1c9078fa15cf1512145aa">
     <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
 
 <!-- Setup Google Analytics -->
@@ -87,11 +87,11 @@
 <h2 id="️-installation-and-setup">🖥️ Installation and setup</h2>
 
 <h3 id="using-pip">Using pip.</h3>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip install panel watchfiles
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">pip</span> <span class="n">install</span> <span class="n">panel</span> <span class="n">watchfiles</span>
 </code></pre></div></div>
 
 <h3 id="using-conda">Using conda</h3>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>conda install panel watchfiles  
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">conda</span> <span class="n">install</span> <span class="n">panel</span> <span class="n">watchfiles</span>  
 </code></pre></div></div>
 
 <p>✅ Tip:
@@ -197,7 +197,34 @@ To incorporate highlighted code sections into your app, you’ll need to install
 </code></pre></div></div>
 <p>Here we are using a template called FastlistTemplate which is inbuit present in panel which isb mostly used for dashboards with heavy data.</p>
 
-<h3 id="-lets-dive-into-real-time-examples-and-explore-some-important-functions-this-library-offers">🚀 Lets dive into real time examples and explore some important functions this library offers.</h3>
+<h3 id="-lets-see-some-important-functions-this-library-offers">🚀 Lets see some important functions this library offers</h3>
+<p><code class="language-plaintext highlighter-rouge">pn.Row()</code> – Creates a horizontal layout for components.<br />
+<code class="language-plaintext highlighter-rouge">pn.Column()</code> – Creates a vertical layout for components.<br />
+<code class="language-plaintext highlighter-rouge">pn.GridBox()</code> – Arranges components in a grid layout.<br />
+<code class="language-plaintext highlighter-rouge">pn.WidgetBox()</code> – Groups widgets with optional styling.<br />
+<code class="language-plaintext highlighter-rouge">pn.pane.Markdown()</code> – Renders Markdown text.<br />
+<code class="language-plaintext highlighter-rouge">pn.pane.HTML()</code> – Displays raw HTML content.<br />
+<code class="language-plaintext highlighter-rouge">pn.pane.Image()</code> – Displays images from file or URL.<br />
+<code class="language-plaintext highlighter-rouge">pn.pane.Video()</code> – Embeds and plays videos.<br />
+<code class="language-plaintext highlighter-rouge">pn.pane.Audio()</code> – Embeds and plays audio files.<br />
+<code class="language-plaintext highlighter-rouge">pn.panel()</code> – Converts an object into a Panel layout.<br />
+<code class="language-plaintext highlighter-rouge">pn.widgets.Button()</code> – Adds a clickable button.<br />
+<code class="language-plaintext highlighter-rouge">pn.widgets.TextInput()</code> – Creates a text input field.<br />
+<code class="language-plaintext highlighter-rouge">pn.widgets.IntSlider()</code> – Adds an integer slider.<br />
+<code class="language-plaintext highlighter-rouge">pn.widgets.FloatSlider()</code> – Adds a floating-point slider.<br />
+<code class="language-plaintext highlighter-rouge">pn.widgets.Checkbox()</code> – Adds a checkbox for boolean input.<br />
+<code class="language-plaintext highlighter-rouge">pn.widgets.RadioButtonGroup()</code> – Creates radio button options.<br />
+<code class="language-plaintext highlighter-rouge">pn.widgets.Select()</code> – Adds a dropdown selection menu.<br />
+<code class="language-plaintext highlighter-rouge">pn.widgets.FileInput()</code> – Enables file uploads.<br />
+<code class="language-plaintext highlighter-rouge">pn.bind()</code> – Binds a function to widgets dynamically.<br />
+<code class="language-plaintext highlighter-rouge">pn.extension()</code> – Loads necessary Panel extensions for rendering.<br />
+<code class="language-plaintext highlighter-rouge">pn.state</code> – Provides access to session state and configuration.<br />
+<code class="language-plaintext highlighter-rouge">pn.serve()</code> – Serves the Panel app on a local server.<br />
+<code class="language-plaintext highlighter-rouge">pn.interact()</code> – Creates interactive widgets for functions.<br />
+<code class="language-plaintext highlighter-rouge">pn.Tabs()</code> – Organizes content into tabbed views.<br />
+<code class="language-plaintext highlighter-rouge">pn.Spacer()</code> – Adds empty space between components.</p>
+
+<h3 id="-lets-now-dive-into-real-time-examples-and-explore-some-important-functions-this-library-offers">🚀 Lets now dive into real time examples and explore some important functions this library offers.</h3>
 
 <h3 id="1-a-basic-panel-app">1. A Basic Panel app</h3>
 
