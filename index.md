@@ -59,12 +59,12 @@ This blog explains a powerful opensource library called Panel which helps us bui
 ## 🖥️ Installation and setup
  
 ### Using pip.
-```    
+```python   
 pip install panel watchfiles
 ```
 
 ### Using conda
-```
+```python
 conda install panel watchfiles  
  ```  
 
