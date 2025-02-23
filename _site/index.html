@@ -41,7 +41,7 @@
       <h1><a href="http://localhost:4000/">Panel-library-in-python</a></h1>
       
 
-      <h1 id="panel-easy-python-dashboards">🚀<a href="_images/logo_horizontal_light_theme.png">Panel</a>-Easy Python Dashboards.</h1>
+      <h1 id="-panel-easy-python-dashboards">🚀 Panel-Easy Python Dashboards.</h1>
 
 <p>This blog explains a powerful opensource library called Panel which helps us build interactive web apps and can also be used in data analysis in a very effiecient way.</p>
 
@@ -201,9 +201,9 @@
 </code></pre></div></div>
 <p>Here we are using a template called FastlistTemplate which is inbuit present in panel which isb mostly used for dashboards with heavy data.</p>
 
-<h3 id="lets-dive-into-real-time-examples-and-explore-some-important-functions-this-library-offers">Lets dive into real time examples and explore some important functions this library offers.</h3>
+<h3 id="-lets-dive-into-real-time-examples-and-explore-some-important-functions-this-library-offers">🚀 Lets dive into real time examples and explore some important functions this library offers.</h3>
 
-<h4 id="a-basic-panel-app">A Basic Panel app</h4>
+<h3 id="a-basic-panel-app">A Basic Panel app</h3>
 
 <p>The following code creates a simple web app with a text input and a button.</p>
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">panel</span>  <span class="k">as</span> <span class="n">pn</span>
@@ -219,7 +219,56 @@
 <span class="n">app</span> <span class="o">=</span> <span class="n">pn</span><span class="p">.</span><span class="n">Column</span><span class="p">(</span><span class="n">text_input</span><span class="p">,</span> <span class="n">button</span><span class="p">,</span> <span class="n">output</span><span class="p">)</span>
 <span class="n">app</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
 </code></pre></div></div>
+<p>Here we have used the Widgets function with TextInput and Button(both inbuilt functions) which creates a input box where the user can enter their name and creates a button labeled “Greet”. The button_type gives it a styled appearence.
+When the user enters their respective name in the TextInput widget and click the Greet button, update_output function is triggered, then the function receievs the input and simultaneously updates the Markdown output with a greeting.
+The updated message is displayed instantly without reloading the page.</p>
+<h3 id="interactive-dataframe-viewer-with-pandas">Interactive Dataframe Viewer with pandas</h3>
 
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">panel</span> <span class="k">as</span> <span class="n">pn</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="n">pd</span>
+<span class="n">pn</span><span class="p">.</span><span class="n">extension</span><span class="p">()</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">DataFrame</span><span class="p">({</span>
+    <span class="s">'Name'</span><span class="p">:</span> <span class="p">[</span><span class="s">'Alice'</span><span class="p">,</span> <span class="s">'Bob'</span><span class="p">,</span> <span class="s">'Charlie'</span><span class="p">],</span>
+    <span class="s">'Age'</span><span class="p">:</span> <span class="p">[</span><span class="mi">25</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">35</span><span class="p">],</span>
+    <span class="s">'Score'</span><span class="p">:</span> <span class="p">[</span><span class="mi">85</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">95</span><span class="p">]</span>
+<span class="p">})</span>
+<span class="n">pn</span><span class="p">.</span><span class="n">Column</span><span class="p">(</span>
+    <span class="s">"# Interactive Data Table"</span><span class="p">,</span>
+    <span class="n">pn</span><span class="p">.</span><span class="n">widgets</span><span class="p">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s">"Student Data"</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">500</span><span class="p">)</span>
+<span class="p">).</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h2 id="-use-cases">🔹 Use Cases.</h2>
+<h3 id="1--data-science">1. 📊 Data science</h3>
+<p>We can create interactive dashboards for exploring datasets in real time, for example A dashboard of EDA where people can adjust filters and dynamically visualize the data which is more better and effiecient than sorting manually which also consumes a lot of time.
+Key Panel features used would be pn.widgets.Select, pn.widgets.Slider for filtering data
+pn.pane.Matplotlib, pn.pane.DataFrame for visualization
+@pn.depends for dynamic updates and many more.</p>
+
+<h3 id="2--machine-learning-models">2. 🤖 Machine Learning Models</h3>
+<p>Panel is also widely used in building and deploying simple ML inference tools like image classifiers, portfolio makers and many more. For this we can integrate Panel library with ML interfaces like Tensorflow or Pytorch.</p>
+
+<h3 id="3--finance-and-stock-market-analysis">3. 📈 Finance and Stock Market analysis</h3>
+<p>Since Panel can easily combine with matplotlib and many other visualization tools, we can analyse stock market trends more easily, for example we can build a cryptocurrency like bitcoin price tracker with dynamic charts of previous data and predictions of up or down. We can include price changes, moving averages and all kinds of indicators used in stock analysis. For this we have to integrate Panel with yfinance(module for finance analysis) along with Plotly(for interactive stock market charts).</p>
+
+<h3 id="4--geospatial-data-visualization">4. 🌍 Geospatial Data Visualization</h3>
+<p>We can also build interactive maps based on geographic data, for example COVID-19 spread analysis with interactive heatmap, route analyser for finding best route possible for  reaching a destination. For this we have to integrate pn.pane.Folium( A Panel calling for interactive maps ) with Geopandas for importing maps of different kind.</p>
+
+<h3 id="5--scientific-research">5. 🔬 Scientific Research</h3>
+<p>We can make simulation of waves, heat distributuon plots, fluid dynamics and many more related to physics and chemistry which helps in making very efficient research for engineers. For this we need to  integrate Holoviews module in Panel with Matplotlib for dynamic engineering simulations.</p>
+
+<h2 id="-conclusion">🎯📊 Conclusion</h2>
+
+<p>All in all, The Panel library in python is really a gamechanger for building very interactive dashboards, web applications, real-time visualizations with a very minimal effort. This library is made for a large set of people including data scientists, developers, reseachers, or business analyss and more.Panel provides a powerful yet a userfriendly way to ctreate great applications without needing heavy Javascript or complex frontend programs.</p>
+
+<p>From AI/ML model deployment 🤖, financial market analysis 📈, and IoT monitoring 🌍 to business intelligence dashboards 🏢, Panel is widely used across industries. Its seamless integration with Python’s data ecosystem 🐍 (Pandas, Bokeh, HoloViews, Plotly, and more) makes it a must-have tool for anyone looking to turn data into actionable insights.</p>
+
+<p>As we are going through a tech era and tech continues to evolve, the ability to create interacitve and insightful applications will be more valuable than ever. With Panel as your go  to tool, you hhave everything you need to build real-world applications and make informed decisions effortlessly.</p>
+
+<h4 id="learn-more-about-panel-panelholoviz">Learn more about Panel: <a href="https://panel.holoviz.org">Panel/holoviz</a></h4>
+<h4 id="panel-github-repository-panelgithub">Panel Github Repository: <a href="https://github.com/holoviz/panel">Panel/Github</a></h4>
+<h4 id="learn-panel-by-doing-paneltutorial">Learn Panel by Doing: <a href="https://panel.holoviz.org/tutorials/index.html">Panel/Tutorial</a></h4>
+<h4 id="panel-youtube-tutorials-panelyoutube">Panel Youtube Tutorials: <a href="https://www.youtube.com/c/HoloViz">Panel/Youtube</a></h4>
 
 
       

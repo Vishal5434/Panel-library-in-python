@@ -4,7 +4,7 @@ title: "Welcome to My Blog"
 description: "A blog about coding and open-source projects"
 ---
 
-# 🚀[Panel](_images/logo_horizontal_light_theme.png)-Easy Python Dashboards.
+# 🚀 Panel-Easy Python Dashboards.
 
 This blog explains a powerful opensource library called Panel which helps us build interactive web apps and can also be used in data analysis in a very effiecient way.
 
@@ -180,9 +180,9 @@ template.servable()
 ```
 Here we are using a template called FastlistTemplate which is inbuit present in panel which isb mostly used for dashboards with heavy data.
 
-### Lets dive into real time examples and explore some important functions this library offers.
+### 🚀 Lets dive into real time examples and explore some important functions this library offers.
 
-#### A Basic Panel app
+### A Basic Panel app
 
 The following code creates a simple web app with a text input and a button.
 ```python
@@ -199,6 +199,77 @@ button.on_click(lambda event: output.object = greet(text_input.value))
 app = pn.Column(text_input, button, output)
 app.show()
 ```
+Here we have used the Widgets function with TextInput and Button(both inbuilt functions) which creates a input box where the user can enter their name and creates a button labeled "Greet". The button_type gives it a styled appearence.
+When the user enters their respective name in the TextInput widget and click the Greet button, update_output function is triggered, then the function receievs the input and simultaneously updates the Markdown output with a greeting.
+The updated message is displayed instantly without reloading the page.
+### Interactive Dataframe Viewer with pandas
+
+```python
+import panel as pn
+import pandas as pd
+pn.extension()
+df = pd.DataFrame({
+    'Name': ['Alice', 'Bob', 'Charlie'],
+    'Age': [25, 30, 35],
+    'Score': [85, 90, 95]
+})
+pn.Column(
+    "# Interactive Data Table",
+    pn.widgets.DataFrame(df, name="Student Data", width=500)
+).show()
+```
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## 🔹 Use Cases.
+### 1. 📊 Data science
+We can create interactive dashboards for exploring datasets in real time, for example A dashboard of EDA where people can adjust filters and dynamically visualize the data which is more better and effiecient than sorting manually which also consumes a lot of time.
+Key Panel features used would be pn.widgets.Select, pn.widgets.Slider for filtering data
+pn.pane.Matplotlib, pn.pane.DataFrame for visualization
+@pn.depends for dynamic updates and many more.
+
+### 2. 🤖 Machine Learning Models
+Panel is also widely used in building and deploying simple ML inference tools like image classifiers, portfolio makers and many more. For this we can integrate Panel library with ML interfaces like Tensorflow or Pytorch.
+
+### 3. 📈 Finance and Stock Market analysis
+Since Panel can easily combine with matplotlib and many other visualization tools, we can analyse stock market trends more easily, for example we can build a cryptocurrency like bitcoin price tracker with dynamic charts of previous data and predictions of up or down. We can include price changes, moving averages and all kinds of indicators used in stock analysis. For this we have to integrate Panel with yfinance(module for finance analysis) along with Plotly(for interactive stock market charts).
+
+### 4. 🌍 Geospatial Data Visualization
+We can also build interactive maps based on geographic data, for example COVID-19 spread analysis with interactive heatmap, route analyser for finding best route possible for  reaching a destination. For this we have to integrate pn.pane.Folium( A Panel calling for interactive maps ) with Geopandas for importing maps of different kind.
+
+### 5. 🔬 Scientific Research
+We can make simulation of waves, heat distributuon plots, fluid dynamics and many more related to physics and chemistry which helps in making very efficient research for engineers. For this we need to  integrate Holoviews module in Panel with Matplotlib for dynamic engineering simulations.
+
+
+## 🎯📊 Conclusion
+
+All in all, The Panel library in python is really a gamechanger for building very interactive dashboards, web applications, real-time visualizations with a very minimal effort. This library is made for a large set of people including data scientists, developers, reseachers, or business analyss and more.Panel provides a powerful yet a userfriendly way to ctreate great applications without needing heavy Javascript or complex frontend programs.
+
+From AI/ML model deployment 🤖, financial market analysis 📈, and IoT monitoring 🌍 to business intelligence dashboards 🏢, Panel is widely used across industries. Its seamless integration with Python’s data ecosystem 🐍 (Pandas, Bokeh, HoloViews, Plotly, and more) makes it a must-have tool for anyone looking to turn data into actionable insights.
+
+As we are going through a tech era and tech continues to evolve, the ability to create interacitve and insightful applications will be more valuable than ever. With Panel as your go  to tool, you hhave everything you need to build real-world applications and make informed decisions effortlessly.
+
+
+#### Learn more about Panel: [Panel/holoviz](https://panel.holoviz.org)
+#### Panel Github Repository: [Panel/Github](https://github.com/holoviz/panel)
+#### Learn Panel by Doing: [Panel/Tutorial](https://panel.holoviz.org/tutorials/index.html)
+#### Panel Youtube Tutorials: [Panel/Youtube](https://www.youtube.com/c/HoloViz)
