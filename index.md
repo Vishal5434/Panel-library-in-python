@@ -59,21 +59,20 @@ This blog explains a powerful opensource library called Panel which helps us bui
 ## 🖥️ Installation and setup
  
 ### Using pip.
-     
-    • pip install panel watchfiles
+```    
+pip install panel watchfiles
+```
 
 ### Using conda
+```
+conda install panel watchfiles  
+ ```  
 
-    • conda install panel watchfiles  
-   
-
-   ✅ Tip
-
+   ✅ Tip:
 We recommend also installing [Watchfiles](https://watchfiles.helpmanual.io/)
  while developing. This will provide a significantly better experience when using Panel’s autoreload features when activating --dev mode. It’s not needed for production.
    
-   ✅ Tip
-
+   ✅ Tip:
 To incorporate highlighted code sections into your app, you’ll need to install [pygments](https://pygments.org/), a powerful syntax highlighting library.
 
 

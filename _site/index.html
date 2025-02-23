@@ -22,7 +22,7 @@
 {"@context":"https://schema.org","@type":"WebSite","description":"A blog about coding and open-source projects","headline":"Panel-Easy Python Dashboards","name":"Panel-library-in-python","url":"http://localhost:4000/"}</script>
 <!-- End Jekyll SEO tag -->
 
-    <link rel="stylesheet" href="/assets/css/style.css?v=596bea9f0a21bc97af913df190094d933c400843">
+    <link rel="stylesheet" href="/assets/css/style.css?v=288895608fe0049b7e35712ef4051be52985fc7f">
     <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
 
 <!-- Setup Google Analytics -->
@@ -87,23 +87,19 @@
 <h2 id="️-installation-and-setup">🖥️ Installation and setup</h2>
 
 <h3 id="using-pip">Using pip.</h3>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>• pip install panel watchfiles
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip install panel watchfiles
 </code></pre></div></div>
 
 <h3 id="using-conda">Using conda</h3>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>• conda install panel watchfiles  
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>conda install panel watchfiles  
 </code></pre></div></div>
 
-<p>✅ Tip</p>
-
-<p>We recommend also installing <a href="https://watchfiles.helpmanual.io/">Watchfiles</a>
+<p>✅ Tip:
+We recommend also installing <a href="https://watchfiles.helpmanual.io/">Watchfiles</a>
  while developing. This will provide a significantly better experience when using Panel’s autoreload features when activating –dev mode. It’s not needed for production.</p>
 
-<p>✅ Tip</p>
-
-<p>To incorporate highlighted code sections into your app, you’ll need to install <a href="https://pygments.org/">pygments</a>, a powerful syntax highlighting library.</p>
+<p>✅ Tip:
+To incorporate highlighted code sections into your app, you’ll need to install <a href="https://pygments.org/">pygments</a>, a powerful syntax highlighting library.</p>
 
 <h2 id="-key-features">⭐ Key features</h2>
 <p>We have already seen why should we use this  library, now lets dive into some more cool features this library offers.</p>
@@ -223,7 +219,7 @@
 <span class="n">app</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
 </code></pre></div></div>
 <p>Output deployed in a local site:
-<img src="assets/images/image1.png" alt="Output" /></p>
+<img src="/assets/images/image1.png" alt="Output" /></p>
 
 <p>Here we have used the Widgets function with TextInput and Button(both inbuilt functions) which creates a input box where the user can enter their name and creates a button labeled “Greet”. The button_type gives it a styled appearence.
 When the user enters their respective name in the TextInput widget and click the Greet button, update_output function is triggered, then the function receievs the input and simultaneously updates the Markdown output with a greeting.
@@ -281,7 +277,7 @@ The updated message is displayed instantly without reloading the page.</p>
 <span class="n">app</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
 </code></pre></div></div>
 <p>Output is deployed in a local site:
-<img src="assets/images/image3.png" alt="Output" />
+<img src="/assets/images/image3.png" alt="Output" />
 This Live Plot using Matplotlib app creates an interactive graph that updates dynamically when a user adjusts a slider. It uses the Panel library for the interface, Matplotlib for plotting, and NumPy to generate data. The program starts by importing these libraries and enabling Panel’s extensions. The plot_sin(freq) function generates a sine wave graph based on a given frequency. A slider (freq_slider) is created, allowing users to adjust the frequency between 0.1 and 10. The graph is displayed using pn.pane.Matplotlib, and an update function (update_plot) ensures that the plot changes whenever the slider value is modified. The slider and the graph are arranged in a vertical layout (pn.Column), and calling .show() launches the interface in a web browser. In simple terms, this app lets users control a sine wave’s frequency using a slider, instantly updating the graph when adjusted.</p>
 
 <h3 id="4-dashboard-with-tables">4. Dashboard with tables</h3>
