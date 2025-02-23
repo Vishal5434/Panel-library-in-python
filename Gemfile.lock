@@ -274,6 +274,7 @@ PLATFORMS
   x64-mingw-ucrt
 
 DEPENDENCIES
+  bundler
   github-pages
   jekyll
 

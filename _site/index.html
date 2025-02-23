@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Welcome to My Blog | Panel-library-in-python</title>
+<title>Panel-Easy Python Dashboards | Panel-library-in-python</title>
 <meta name="generator" content="Jekyll v3.10.0" />
-<meta property="og:title" content="Welcome to My Blog" />
+<meta property="og:title" content="Panel-Easy Python Dashboards" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="A blog about coding and open-source projects" />
 <meta property="og:description" content="A blog about coding and open-source projects" />
@@ -17,12 +17,12 @@
 <meta property="og:site_name" content="Panel-library-in-python" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Welcome to My Blog" />
+<meta property="twitter:title" content="Panel-Easy Python Dashboards" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebSite","description":"A blog about coding and open-source projects","headline":"Welcome to My Blog","name":"Panel-library-in-python","url":"http://localhost:4000/"}</script>
+{"@context":"https://schema.org","@type":"WebSite","description":"A blog about coding and open-source projects","headline":"Panel-Easy Python Dashboards","name":"Panel-library-in-python","url":"http://localhost:4000/"}</script>
 <!-- End Jekyll SEO tag -->
 
-    <link rel="stylesheet" href="/assets/css/style.css?v=038e8fd06ac93d8dfc39c4794698a80e8de42a32">
+    <link rel="stylesheet" href="/assets/css/style.css?v=596bea9f0a21bc97af913df190094d933c400843">
     <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
 
 <!-- Setup Google Analytics -->
@@ -203,26 +203,32 @@
 
 <h3 id="-lets-dive-into-real-time-examples-and-explore-some-important-functions-this-library-offers">🚀 Lets dive into real time examples and explore some important functions this library offers.</h3>
 
-<h3 id="a-basic-panel-app">A Basic Panel app</h3>
+<h3 id="1-a-basic-panel-app">1. A Basic Panel app</h3>
 
 <p>The following code creates a simple web app with a text input and a button.</p>
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">panel</span>  <span class="k">as</span> <span class="n">pn</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">panel</span> <span class="k">as</span> <span class="n">pn</span>
+
 <span class="n">pn</span><span class="p">.</span><span class="n">extension</span><span class="p">()</span>
+
 <span class="k">def</span> <span class="nf">greet</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
-   <span class="k">return</span> <span class="sa">f</span><span class="s">"Hello, </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s">!"</span>
-
+    <span class="k">return</span> <span class="sa">f</span><span class="s">"Hello, </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s">!"</span>
 <span class="n">text_input</span> <span class="o">=</span> <span class="n">pn</span><span class="p">.</span><span class="n">widgets</span><span class="p">.</span><span class="n">TextInput</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">"Enter your name"</span><span class="p">)</span>
-<span class="n">button</span><span class="o">=</span><span class="n">pn</span><span class="p">.</span><span class="n">widgets</span><span class="p">.</span><span class="n">Button</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">"Greet"</span><span class="p">,</span> <span class="n">button_type</span><span class="o">=</span><span class="s">"primary"</span><span class="p">)</span>
-<span class="n">output</span><span class="o">=</span><span class="n">pn</span><span class="p">.</span><span class="n">pane</span><span class="p">.</span><span class="n">Markdown</span><span class="p">(</span><span class="s">""</span><span class="p">)</span>
+<span class="n">button</span> <span class="o">=</span> <span class="n">pn</span><span class="p">.</span><span class="n">widgets</span><span class="p">.</span><span class="n">Button</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">"Greet"</span><span class="p">,</span> <span class="n">button_type</span><span class="o">=</span><span class="s">"primary"</span><span class="p">)</span>
+<span class="n">output</span> <span class="o">=</span> <span class="n">pn</span><span class="p">.</span><span class="n">pane</span><span class="p">.</span><span class="n">Markdown</span><span class="p">(</span><span class="s">""</span><span class="p">)</span>
 
-<span class="n">button</span><span class="p">.</span><span class="n">on_click</span><span class="p">(</span><span class="k">lambda</span> <span class="n">event</span><span class="p">:</span> <span class="n">output</span><span class="p">.</span><span class="nb">object</span> <span class="o">=</span> <span class="n">greet</span><span class="p">(</span><span class="n">text_input</span><span class="p">.</span><span class="n">value</span><span class="p">))</span>
+<span class="k">def</span> <span class="nf">update_output</span><span class="p">(</span><span class="n">event</span><span class="p">):</span>
+    <span class="n">output</span><span class="p">.</span><span class="nb">object</span> <span class="o">=</span> <span class="n">greet</span><span class="p">(</span><span class="n">text_input</span><span class="p">.</span><span class="n">value</span><span class="p">)</span>
+<span class="n">button</span><span class="p">.</span><span class="n">on_click</span><span class="p">(</span><span class="n">update_output</span><span class="p">)</span>
 <span class="n">app</span> <span class="o">=</span> <span class="n">pn</span><span class="p">.</span><span class="n">Column</span><span class="p">(</span><span class="n">text_input</span><span class="p">,</span> <span class="n">button</span><span class="p">,</span> <span class="n">output</span><span class="p">)</span>
 <span class="n">app</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
 </code></pre></div></div>
+<p>Output deployed in a local site:
+<img src="assets/images/image1.png" alt="Output" /></p>
+
 <p>Here we have used the Widgets function with TextInput and Button(both inbuilt functions) which creates a input box where the user can enter their name and creates a button labeled “Greet”. The button_type gives it a styled appearence.
 When the user enters their respective name in the TextInput widget and click the Greet button, update_output function is triggered, then the function receievs the input and simultaneously updates the Markdown output with a greeting.
 The updated message is displayed instantly without reloading the page.</p>
-<h3 id="interactive-dataframe-viewer-with-pandas">Interactive Dataframe Viewer with pandas</h3>
+<h3 id="2-interactive-dataframe-viewer-with-pandas">2. Interactive Dataframe Viewer with pandas</h3>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">panel</span> <span class="k">as</span> <span class="n">pn</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="n">pd</span>
@@ -237,6 +243,98 @@ The updated message is displayed instantly without reloading the page.</p>
     <span class="n">pn</span><span class="p">.</span><span class="n">widgets</span><span class="p">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s">"Student Data"</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">500</span><span class="p">)</span>
 <span class="p">).</span><span class="n">show</span><span class="p">()</span>
 </code></pre></div></div>
+<p>Output is created as a local site as follows
+<img src="assets/images/image2%20(1).png" alt="Output" />
+<img src="assets/images/image2%20(2).png" alt="Output" /></p>
+
+<p>As we can see we can change the order directly in the table clicking in the score column.</p>
+
+<p>This Interactive DataFrame Viewer is a simple web app that displays a table of data in an interactive format. It uses the Panel library to create the interface and Pandas to handle the data. The app starts by importing these libraries and enabling Panel’s extensions. It then creates a Pandas DataFrame (df) containing sample student data, including names, ages, and scores. The data is displayed using pn.widgets.DataFrame, which allows users to scroll, sort, and interact with the table. The elements are arranged in a vertical column (pn.Column), and calling .show() launches the interface in a web browser. In simple terms, this app loads a table of student data and displays it in an easy-to-use, interactive format.</p>
+
+<h3 id="3-live-plot-using-matplotlib">3. Live Plot using Matplotlib</h3>
+<p>Generates dynamic plots with Panel and Matplotlib</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">panel</span> <span class="k">as</span> <span class="n">pn</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+
+<span class="n">pn</span><span class="p">.</span><span class="n">extension</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">plot_sin</span><span class="p">(</span><span class="n">freq</span><span class="o">=</span><span class="mf">1.0</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">sin</span><span class="p">(</span><span class="n">freq</span> <span class="o">*</span> <span class="n">x</span><span class="p">)</span>
+    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="p">.</span><span class="n">subplots</span><span class="p">()</span>
+    <span class="n">ax</span><span class="p">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s">"sin(</span><span class="si">{</span><span class="n">freq</span><span class="si">}</span><span class="s">x)"</span><span class="p">)</span>
+    <span class="n">ax</span><span class="p">.</span><span class="n">legend</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">fig</span>
+
+<span class="n">freq_slider</span> <span class="o">=</span> <span class="n">pn</span><span class="p">.</span><span class="n">widgets</span><span class="p">.</span><span class="n">FloatSlider</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">"Frequency"</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">plot_pane</span> <span class="o">=</span> 
+<span class="n">pn</span><span class="p">.</span><span class="n">pane</span><span class="p">.</span><span class="n">Matplotlib</span><span class="p">(</span><span class="n">plot_sin</span><span class="p">(</span><span class="n">freq_slider</span><span class="p">.</span><span class="n">value</span><span class="p">),</span> <span class="n">tight</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">update_plot</span><span class="p">(</span><span class="n">event</span><span class="p">):</span>
+    <span class="n">plot_pane</span><span class="p">.</span><span class="nb">object</span> <span class="o">=</span> <span class="n">plot_sin</span><span class="p">(</span><span class="n">freq_slider</span><span class="p">.</span><span class="n">value</span><span class="p">)</span>
+
+<span class="n">freq_slider</span><span class="p">.</span><span class="n">param</span><span class="p">.</span><span class="n">watch</span><span class="p">(</span><span class="n">update_plot</span><span class="p">,</span> <span class="s">'value'</span><span class="p">)</span>
+
+<span class="n">app</span> <span class="o">=</span> <span class="n">pn</span><span class="p">.</span><span class="n">Column</span><span class="p">(</span><span class="n">freq_slider</span><span class="p">,</span> <span class="n">plot_pane</span><span class="p">)</span>
+<span class="n">app</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div></div>
+<p>Output is deployed in a local site:
+<img src="assets/images/image3.png" alt="Output" />
+This Live Plot using Matplotlib app creates an interactive graph that updates dynamically when a user adjusts a slider. It uses the Panel library for the interface, Matplotlib for plotting, and NumPy to generate data. The program starts by importing these libraries and enabling Panel’s extensions. The plot_sin(freq) function generates a sine wave graph based on a given frequency. A slider (freq_slider) is created, allowing users to adjust the frequency between 0.1 and 10. The graph is displayed using pn.pane.Matplotlib, and an update function (update_plot) ensures that the plot changes whenever the slider value is modified. The slider and the graph are arranged in a vertical layout (pn.Column), and calling .show() launches the interface in a web browser. In simple terms, this app lets users control a sine wave’s frequency using a slider, instantly updating the graph when adjusted.</p>
+
+<h3 id="4-dashboard-with-tables">4. Dashboard with tables</h3>
+<p>Creates a multi-tab dashboard</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">panel</span> <span class="k">as</span> <span class="n">pn</span>
+
+<span class="n">pn</span><span class="p">.</span><span class="n">extension</span><span class="p">()</span>
+
+<span class="n">tab1</span> <span class="o">=</span> <span class="n">pn</span><span class="p">.</span><span class="n">pane</span><span class="p">.</span><span class="n">Markdown</span><span class="p">(</span><span class="s">"# Welcome to the Panel Dashboard 🎉"</span><span class="p">)</span>
+<span class="n">tab2</span> <span class="o">=</span> <span class="n">pn</span><span class="p">.</span><span class="n">widgets</span><span class="p">.</span><span class="n">Slider</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">"Adjust Value"</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">tab3</span> <span class="o">=</span> <span class="n">pn</span><span class="p">.</span><span class="n">widgets</span><span class="p">.</span><span class="n">FileInput</span><span class="p">()</span>
+
+<span class="n">tabs</span> <span class="o">=</span> <span class="n">pn</span><span class="p">.</span><span class="n">Tabs</span><span class="p">(</span>
+    <span class="p">(</span><span class="s">"🏠 Home"</span><span class="p">,</span> <span class="n">tab1</span><span class="p">),</span>
+    <span class="p">(</span><span class="s">"📏 Slider"</span><span class="p">,</span> <span class="n">tab2</span><span class="p">),</span>
+    <span class="p">(</span><span class="s">"📂 Upload File"</span><span class="p">,</span> <span class="n">tab3</span><span class="p">),</span>
+<span class="p">)</span>
+
+<span class="n">tabs</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div></div>
+<p>Output is deployed as a local site:
+<img src="assets/images/image6%20(2).png" alt="Output" />
+<img src="assets/images/image6%20(1).png" alt="Output" />
+<img src="assets/images/image6%20(3).png" alt="Output" /></p>
+
+<p>We can see it created 3 different tabs individually.</p>
+
+<p>This Dashboard with Tabs app creates a web interface with multiple sections, allowing users to switch between different content areas using tabs. It begins by importing the Panel library and enabling its extensions. The app defines three tabs: Home, Slider, and File Upload. The Home Tab displays a welcoming message with Markdown. The Slider Tab contains a slider widget that lets users adjust a value between 0 and 100. The File Upload Tab includes a file upload widget where users can select a file from their computer. These tabs are organized into a multi-tab interface using pn.Tabs, and users can click to navigate between them. When calling .show(), the app opens in a web browser, offering a smooth experience where users can interact with the content in each tab. In simple terms, this app provides an easy-to-use dashboard with different sections for displaying information, adjusting values, and uploading files.</p>
+
+<h3 id="5-real-time-data-updating">5. Real-time Data updating</h3>
+<p>Live updates using Periodic Callbacks.</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">panel</span> <span class="k">as</span> <span class="n">pn</span>
+<span class="kn">import</span> <span class="nn">random</span>
+
+<span class="n">pn</span><span class="p">.</span><span class="n">extension</span><span class="p">()</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="n">pn</span><span class="p">.</span><span class="n">indicators</span><span class="p">.</span><span class="n">Number</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">"Random Number"</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s">"{value}"</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">update</span><span class="p">():</span>
+    <span class="n">data</span><span class="p">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">random</span><span class="p">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+
+<span class="n">pn</span><span class="p">.</span><span class="n">state</span><span class="p">.</span><span class="n">add_periodic_callback</span><span class="p">(</span><span class="n">update</span><span class="p">,</span> <span class="n">period</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>  <span class="c1"># Updates every 1 second
+</span>
+<span class="n">app</span> <span class="o">=</span> <span class="n">pn</span><span class="p">.</span><span class="n">Column</span><span class="p">(</span><span class="s">"# Live Random Number Generator"</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+<span class="n">app</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div></div>
+<p>Output is deployed as a local site:
+<img src="assets/images/Screenshot%202025-02-23%20225305.png" alt="Output" /></p>
+
+<p>This creates a random number generator.</p>
+
+<p>This Real-time Data Update (Streaming) app generates a random number that updates every second. It uses the Panel library for the interface and random to generate the numbers. The program begins by importing the necessary libraries and enabling Panel’s extensions. The app defines a Number Indicator widget (data), which displays a random number starting at 0. The update() function is created to generate a random integer between 1 and 100 and update the displayed number.
+The pn.state.add_periodic_callback() function is used to call the update() function every 1000 milliseconds (1 second), ensuring the number is refreshed in real time. The layout is defined using pn.Column, which displays the label “Live Random Number Generator” along with the indicator widget showing the number. Calling .show() opens the app in a web browser, where users can watch the random number update every second. In simple terms, this app continuously updates and shows a new random number every second, giving a real-time experience.</p>
 
 <h2 id="-use-cases">🔹 Use Cases.</h2>
 <h3 id="1--data-science">1. 📊 Data science</h3>
@@ -265,9 +363,18 @@ pn.pane.Matplotlib, pn.pane.DataFrame for visualization
 
 <p>As we are going through a tech era and tech continues to evolve, the ability to create interacitve and insightful applications will be more valuable than ever. With Panel as your go  to tool, you hhave everything you need to build real-world applications and make informed decisions effortlessly.</p>
 
+<h2 id="credits">Credits</h2>
+<p>“This article was inspired by <a href="https://panel.holoviz.org">Panel’s official documentation</a> with contributions from the open-source community and developed by my team:</p>
+
+<p>K Vishal Reddy, Roll no: 24110151</p>
+
+<p>Allibilli Lohith, Roll no: 24110029</p>
+
+<p>Thathavarthi Manikanta Raju, Roll no: 24110372</p>
+
 <h4 id="learn-more-about-panel-panelholoviz">Learn more about Panel: <a href="https://panel.holoviz.org">Panel/holoviz</a></h4>
 <h4 id="panel-github-repository-panelgithub">Panel Github Repository: <a href="https://github.com/holoviz/panel">Panel/Github</a></h4>
-<h4 id="learn-panel-by-doing-paneltutorial">Learn Panel by Doing: <a href="https://panel.holoviz.org/tutorials/index.html">Panel/Tutorial</a></h4>
+<h4 id="panel-tutorials-paneltutorial">Panel Tutorials: <a href="https://panel.holoviz.org/tutorials/index.html">Panel/Tutorial</a></h4>
 <h4 id="panel-youtube-tutorials-panelyoutube">Panel Youtube Tutorials: <a href="https://www.youtube.com/c/HoloViz">Panel/Youtube</a></h4>
 
 

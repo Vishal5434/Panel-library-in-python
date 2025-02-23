@@ -1,6 +1,6 @@
 ---
 layout: home
-title: "Welcome to My Blog"
+title: "Panel-Easy Python Dashboards"
 description: "A blog about coding and open-source projects"
 ---
 
@@ -180,29 +180,37 @@ template.servable()
 ```
 Here we are using a template called FastlistTemplate which is inbuit present in panel which isb mostly used for dashboards with heavy data.
 
+
+
 ### 🚀 Lets dive into real time examples and explore some important functions this library offers.
 
-### A Basic Panel app
+### 1. A Basic Panel app
 
 The following code creates a simple web app with a text input and a button.
 ```python
-import panel  as pn
+import panel as pn
+
 pn.extension()
+
 def greet(name):
-   return f"Hello, {name}!"
-
+    return f"Hello, {name}!"
 text_input = pn.widgets.TextInput(name="Enter your name")
-button=pn.widgets.Button(name="Greet", button_type="primary")
-output=pn.pane.Markdown("")
+button = pn.widgets.Button(name="Greet", button_type="primary")
+output = pn.pane.Markdown("")
 
-button.on_click(lambda event: output.object = greet(text_input.value))
+def update_output(event):
+    output.object = greet(text_input.value)
+button.on_click(update_output)
 app = pn.Column(text_input, button, output)
 app.show()
 ```
+Output deployed in a local site:
+![Output](assets/images/image1.png)
+
 Here we have used the Widgets function with TextInput and Button(both inbuilt functions) which creates a input box where the user can enter their name and creates a button labeled "Greet". The button_type gives it a styled appearence.
 When the user enters their respective name in the TextInput widget and click the Greet button, update_output function is triggered, then the function receievs the input and simultaneously updates the Markdown output with a greeting.
 The updated message is displayed instantly without reloading the page.
-### Interactive Dataframe Viewer with pandas
+### 2. Interactive Dataframe Viewer with pandas
 
 ```python
 import panel as pn
@@ -218,25 +226,101 @@ pn.Column(
     pn.widgets.DataFrame(df, name="Student Data", width=500)
 ).show()
 ```
+Output is created as a local site as follows
+![Output](assets/images/image2%20(1).png)
+![Output](assets/images/image2%20(2).png)
 
+As we can see we can change the order directly in the table clicking in the score column.
 
+This Interactive DataFrame Viewer is a simple web app that displays a table of data in an interactive format. It uses the Panel library to create the interface and Pandas to handle the data. The app starts by importing these libraries and enabling Panel’s extensions. It then creates a Pandas DataFrame (df) containing sample student data, including names, ages, and scores. The data is displayed using pn.widgets.DataFrame, which allows users to scroll, sort, and interact with the table. The elements are arranged in a vertical column (pn.Column), and calling .show() launches the interface in a web browser. In simple terms, this app loads a table of student data and displays it in an easy-to-use, interactive format.
 
+### 3. Live Plot using Matplotlib
+Generates dynamic plots with Panel and Matplotlib
 
+```python
+import panel as pn
+import matplotlib.pyplot as plt
+import numpy as np
 
+pn.extension()
 
+def plot_sin(freq=1.0):
+    x = np.linspace(0, 10, 100)
+    y = np.sin(freq * x)
+    fig, ax = plt.subplots()
+    ax.plot(x, y, label=f"sin({freq}x)")
+    ax.legend()
+    return fig
 
+freq_slider = pn.widgets.FloatSlider(name="Frequency", start=0.1, end=10, step=0.1, value=1)
+plot_pane = 
+pn.pane.Matplotlib(plot_sin(freq_slider.value), tight=True)
 
+def update_plot(event):
+    plot_pane.object = plot_sin(freq_slider.value)
 
+freq_slider.param.watch(update_plot, 'value')
 
+app = pn.Column(freq_slider, plot_pane)
+app.show()
+```
+Output is deployed in a local site:
+![Output](assets/images/image3.png)
+This Live Plot using Matplotlib app creates an interactive graph that updates dynamically when a user adjusts a slider. It uses the Panel library for the interface, Matplotlib for plotting, and NumPy to generate data. The program starts by importing these libraries and enabling Panel’s extensions. The plot_sin(freq) function generates a sine wave graph based on a given frequency. A slider (freq_slider) is created, allowing users to adjust the frequency between 0.1 and 10. The graph is displayed using pn.pane.Matplotlib, and an update function (update_plot) ensures that the plot changes whenever the slider value is modified. The slider and the graph are arranged in a vertical layout (pn.Column), and calling .show() launches the interface in a web browser. In simple terms, this app lets users control a sine wave’s frequency using a slider, instantly updating the graph when adjusted.
 
+### 4. Dashboard with tables
+Creates a multi-tab dashboard
+```python
+import panel as pn
 
+pn.extension()
 
+tab1 = pn.pane.Markdown("# Welcome to the Panel Dashboard 🎉")
+tab2 = pn.widgets.Slider(name="Adjust Value", start=0, end=100)
+tab3 = pn.widgets.FileInput()
 
+tabs = pn.Tabs(
+    ("🏠 Home", tab1),
+    ("📏 Slider", tab2),
+    ("📂 Upload File", tab3),
+)
 
+tabs.show()
+```
+Output is deployed as a local site:
+![Output](assets/images/image6%20(2).png)
+![Output](assets/images/image6%20(1).png)
+![Output](assets/images/image6%20(3).png)
 
+We can see it created 3 different tabs individually.
 
+This Dashboard with Tabs app creates a web interface with multiple sections, allowing users to switch between different content areas using tabs. It begins by importing the Panel library and enabling its extensions. The app defines three tabs: Home, Slider, and File Upload. The Home Tab displays a welcoming message with Markdown. The Slider Tab contains a slider widget that lets users adjust a value between 0 and 100. The File Upload Tab includes a file upload widget where users can select a file from their computer. These tabs are organized into a multi-tab interface using pn.Tabs, and users can click to navigate between them. When calling .show(), the app opens in a web browser, offering a smooth experience where users can interact with the content in each tab. In simple terms, this app provides an easy-to-use dashboard with different sections for displaying information, adjusting values, and uploading files.
 
+### 5. Real-time Data updating
+Live updates using Periodic Callbacks.
+```python
+import panel as pn
+import random
 
+pn.extension()
+
+data = pn.indicators.Number(name="Random Number", value=0, format="{value}")
+
+def update():
+    data.value = random.randint(1, 100)
+
+pn.state.add_periodic_callback(update, period=1000)  # Updates every 1 second
+
+app = pn.Column("# Live Random Number Generator", data)
+app.show()
+```
+Output is deployed as a local site:
+![Output](assets/images/Screenshot%202025-02-23%20225305.png)
+
+This creates a random number generator.
+
+This Real-time Data Update (Streaming) app generates a random number that updates every second. It uses the Panel library for the interface and random to generate the numbers. The program begins by importing the necessary libraries and enabling Panel's extensions. The app defines a Number Indicator widget (data), which displays a random number starting at 0. The update() function is created to generate a random integer between 1 and 100 and update the displayed number.
+The pn.state.add_periodic_callback() function is used to call the update() function every 1000 milliseconds (1 second), ensuring the number is refreshed in real time. The layout is defined using pn.Column, which displays the label "Live Random Number Generator" along with the indicator widget showing the number. Calling .show() opens the app in a web browser, where users can watch the random number update every second. In simple terms, this app continuously updates and shows a new random number every second, giving a real-time experience.
 
 
 
@@ -269,7 +353,17 @@ From AI/ML model deployment 🤖, financial market analysis 📈, and IoT monito
 As we are going through a tech era and tech continues to evolve, the ability to create interacitve and insightful applications will be more valuable than ever. With Panel as your go  to tool, you hhave everything you need to build real-world applications and make informed decisions effortlessly.
 
 
+
+## Credits
+"This article was inspired by [Panel’s official documentation](https://panel.holoviz.org) with contributions from the open-source community and developed by my team:
+
+K Vishal Reddy, Roll no: 24110151
+
+Allibilli Lohith, Roll no: 24110029
+
+Thathavarthi Manikanta Raju, Roll no: 24110372
+
 #### Learn more about Panel: [Panel/holoviz](https://panel.holoviz.org)
 #### Panel Github Repository: [Panel/Github](https://github.com/holoviz/panel)
-#### Learn Panel by Doing: [Panel/Tutorial](https://panel.holoviz.org/tutorials/index.html)
+#### Panel Tutorials: [Panel/Tutorial](https://panel.holoviz.org/tutorials/index.html)
 #### Panel Youtube Tutorials: [Panel/Youtube](https://www.youtube.com/c/HoloViz)
