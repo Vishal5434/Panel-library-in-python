@@ -178,7 +178,7 @@ template=pn.template.FastlistTemplate(
 )
 template.servable()
 ```
-Here we are using a template called FastlistTemplate which is inbuit present in panel which isb mostly used for dashboards with heavy data.
+Here we are using a template called FastlistTemplate which is inbuit present in panel which is mostly used for dashboards with heavy data.
 
 ### 🚀 Lets see some important functions this library offers
 `pn.Row()` – Creates a horizontal layout for components.  
