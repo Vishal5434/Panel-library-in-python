@@ -57,6 +57,7 @@ This blog explains a powerful opensource library called Panel which helps us bui
 
 
 ## 🖥️ Installation and setup
+Installation is pretty simple, open your command prompt and execute the one of the  following commands either using pip or conda.
  
 ### Using pip.
 ```python   
@@ -83,7 +84,7 @@ We have already seen why should we use this  library, now lets dive into some mo
 
    • It follows an object-oriented approach where Python objects (widgets, plots, layouts) can be directly manipulated.
 
-   • This is a standalone tool that worls well with jupyter notebooks.
+   • This is a standalone tool that works well with jupyter notebooks.
 
 ### 2️⃣ Supports and integrates multiple Visualization libraries.
 • Panel works seamlessly with various plotting libraries as follow:
