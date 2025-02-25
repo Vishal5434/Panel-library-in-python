@@ -57,7 +57,7 @@ This blog explains a powerful opensource library called Panel which helps us bui
 
 
 ## 🖥️ Installation and setup
-Installation is pretty simple, open your command prompt and execute the one of the  following commands either using pip or conda.
+Installation is pretty simple, open your command prompt and execute one of the  following commands either using pip or conda.
  
 ### Using pip.
 ```python   
